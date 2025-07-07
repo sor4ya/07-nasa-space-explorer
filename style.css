@@ -1,3 +1,154 @@
+/* NASA Colors: 
+
+Primary colors:
+
+This palette’s primary colors are blue, black, and white. Blue is commonly associated with trust, confidence, and sincerity; it is also used to represent calmness and responsibility
+.
+#105bd8 $color-primary
+#0b3d91 $color-primary-darker
+#061f4a $color-primary-darkest
+#212121 $color-base
+#323a45 $color-gray-dark
+#aeb0b5 $color-gray-light
+#ffffff $color-white
+
+Secondary colors:
+
+These are accent colors to provide additional lightness and style to pages looking for a more modern flair. These colors should be used to highlight important features on a page, such as buttons, or for visual style elements, such as illustrations. They should be used sparingly and never draw the eye to more than one piece of information at a time.
+
+#02bfe7 $color-primary-alt
+#046b99 $color-primary-alt-darkest
+#00a6d2 $color-primary-alt-dark
+#9bdaf1 $color-primary-alt-light
+#e1f3f8 $color-primary-alt-lightest
+#dd361c $color-secondary
+#99231b $color-secondary-darkest
+#c62d1f $color-secondary-dark
+#e59892 $color-secondary-light
+#f9e0de $color-secondary-lightest
+ 
+Background colors:
+
+These colors are used largely for background blocks and large content areas. When alternating between tones, be sure to use enough contrast between adjacent colors.
+
+#323a45 $color-gray-dark
+#5b616b $color-gray
+#aeb0b5 $color-gray-light
+#d6d7d9 $color-gray-lighter
+#f1f1f1 $color-gray-lightest
+#494440 $color-gray-warm-dark
+#e4e2e0 $color-gray-warm-light
+#061f4a $color-primary-darkest
+#dce4ef $color-gray-cool-light
+
+Tertiary colors:
+
+These colors are used primarily for content-specific needs, such as alerts and illustrations. They should never overpower the primary colors.
+
+#ff9d1e $color-gold
+#f9aa43 $color-gold-light
+#ffc375 $color-gold-lighter
+#ffebd1 $color-gold-lightest
+#2e8540 $color-green
+#4aa564 $color-green-light
+#94bfa2 $color-green-lighter
+#e7f4e4 $color-green-lightest
+#205493 $color-cool-blue
+#4773aa $color-cool-blue-light
+#8ba6ca $color-cool-blue-lighter
+#dce4ef $color-cool-blue-lightest
+
+Special state colors:
+#aeb0b5 $color-focus
+#4c2c92 $color-visited
+
+Fonts:
+Display 1
+
+font-family: ‘Helvetica’
+font-weight: 700
+font-size: 59px
+line-height: 1.2em/71px
+letter-spacing: -.021em
+
+Display 2
+
+font-family: ‘Helvetica’
+font-weight: 300
+font-size: 44px
+line-height: 1.2em/53px
+letter-spacing: -.021em
+
+Heading 1
+
+font-family: ‘Helvetica’
+font-weight: 700
+font-size: 44px
+line-height: 1.2em/53px
+letter-spacing: -.021em
+
+Heading 2
+
+font-family: ‘Helvetica’
+font-weight: 700
+font-size: 34px
+line-height: 1.2em/41px
+letter-spacing: -.021em
+
+Heading 3
+
+font-family: ‘Helvetica’
+font-weight: 700
+font-size: 24px
+line-height: 1.2em/29px
+
+Heading 4
+
+font-family: ‘Helvetica’
+font-weight: 700
+font-size: 19px
+line-height: 1.2em/23px
+
+Heading 5
+
+font-family: ‘Helvetica’
+font-weight: 700
+font-size: 16px
+line-height: 1.2em/19px
+
+Heading 6
+
+font-family: ‘Helvetica’
+font-weight: 400
+font-size: 13px
+line-height: 1.5em/20px
+text-transform: uppercase
+
+Lead
+paragraph
+
+font-family: ‘Source Sans Pro’
+font-weight: 300
+font-size: 22px
+line-height: 1.5em/33px
+
+Body copy. A series of sentences together which make a paragraph.
+
+font-family: ‘Merriweather’
+font-weight: 400
+font-size: 15px
+line-height: 1.7em/26px
+
+Italic body copy. A series of sentences together which make a paragraph.
+
+font-family: ‘Merriweather’
+font-style: Italic
+font-weight: 400
+font-size: 15px
+line-height: 1.7em/26px
+
+*/
+
 /* Global reset & box sizing */
 * {
   box-sizing: border-box;
@@ -7,9 +158,10 @@
 
 /* Base page styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Merriweather', 'Times New Roman', serif;
   background-color: #f1f1f1;
   padding: 20px;
+  color: #212121;
 }
 
 /* Centered container */
@@ -26,12 +178,17 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
   margin-bottom: 20px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
 }
 
 h1 {
-  font-family: Verdana, sans-serif;
-  font-weight: bold;
-  color: #212121;
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1.2em;
+  letter-spacing: -0.021em;
+  color: #000000;
 }
 
 /* Logo */
@@ -53,25 +210,39 @@ h1 {
 /* Inputs and buttons */
 input[type="date"],
 button {
-  font-family: Arial, sans-serif;
-  font-weight: normal;
-  color: #666;
-  padding: 10px 15px;
-  border: 1px solid #ddd;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-weight: 400;
+  color: #212121;
+  padding: 12px 18px;
+  border: 2px solid #aeb0b5;
   border-radius: 4px;
   font-size: 16px;
   line-height: 1.4;
   width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+input[type="date"]:focus {
+  outline: none;
+  border-color: #105bd8;
+  box-shadow: 0 0 0 2px rgba(16, 91, 216, 0.2);
 }
 
 /* Button specific */
 button {
-  background-color: #d3d3d3;
-  color: black;
+  background-color: #105bd8;
+  color: #ffffff;
   cursor: pointer;
+  font-weight: 600;
+  border: 2px solid #105bd8;
 }
 button:hover {
-  background-color: #bfbfbf;
+  background-color: #0b3d91;
+  border-color: #0b3d91;
+}
+button:active {
+  background-color: #061f4a;
+  border-color: #061f4a;
 }
 
 /* Stack horizontally on wider screens */
@@ -101,13 +272,20 @@ button:hover {
   flex: 1 1 100%;  /* full width by default */
   min-width: 280px;
   max-width: 500px;
-  background: white;
-  padding: 10px;
+  background: #ffffff;
+  padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  border: 1px solid #d6d7d9;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
 /* Three columns on wider screens */
@@ -122,12 +300,29 @@ button:hover {
   height: 200px;
   object-fit: cover;
   border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.gallery-item img:hover {
+  opacity: 0.9;
+}
+
+.gallery-item h3 {
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 1.2em;
+  color: #212121;
+  margin: 12px 0 8px 0;
 }
 
 .gallery-item p {
-  margin-top: 10px;
-  padding: 5px;
+  font-family: 'Merriweather', serif;
   font-size: 14px;
+  line-height: 1.5em;
+  color: #5b616b;
+  margin: 0;
 }
 
 /* Placeholder content */
@@ -135,19 +330,22 @@ button:hover {
   flex: 1 1 100%;
   text-align: center;
   padding: 40px;
-  color: #666;
+  color: #5b616b;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 2px dashed #aeb0b5;
 }
 
 .placeholder-icon {
   font-size: 48px;
   margin-bottom: 20px;
+  color: #105bd8;
 }
 
-/* Bootstrap gallery row for cards */
-.gallery-row.row {
-  width: 100%;
-  margin: 0 auto;
-  justify-content: center;
+.placeholder p {
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5em;
 }
 
 /* Remove inline card width/margin, use flex/grid */
@@ -183,4 +381,85 @@ button:hover {
 .card-text {
   font-size: 0.95rem;
   color: #555;
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(6, 31, 74, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #ffffff;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 700px;
+  width: 90%;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #d6d7d9;
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: #5b616b;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close:hover {
+  color: #105bd8;
+}
+
+#modalTitle {
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.2em;
+  color: #212121;
+  margin: 10px 0 8px 0;
+  text-align: center;
+}
+
+#modalDate {
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  color: #105bd8;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+#modalExplanation {
+  font-family: 'Merriweather', serif;
+  font-size: 15px;
+  line-height: 1.7em;
+  color: #212121;
+  text-align: left;
+  max-height: 200px;
+  overflow-y: auto;
 }

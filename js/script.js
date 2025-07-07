@@ -38,6 +38,42 @@ async function fetchApodData(startDate, endDate) {
   }
 }
 
+// Create and add a modal to the page for full-size image display
+const modal = document.createElement('div');
+modal.id = 'imageModal';
+modal.className = 'modal';
+modal.innerHTML = `
+  <div class="modal-content">
+    <span class="close" id="modalClose">&times;</span>
+    <img id="modalImg" src="" alt="Full Size" />
+    <h3 id="modalTitle"></h3>
+    <p id="modalDate"></p>
+    <p id="modalExplanation"></p>
+  </div>
+`;
+document.body.appendChild(modal);
+
+// Function to open the modal with image data
+function openModal(item) {
+  const modalImg = document.getElementById('modalImg');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDate = document.getElementById('modalDate');
+  const modalExplanation = document.getElementById('modalExplanation');
+  modalImg.src = item.hdurl || item.url;
+  modalImg.alt = item.title;
+  modalTitle.textContent = item.title;
+  modalDate.textContent = `Date: ${item.date}`;
+  modalExplanation.textContent = item.explanation;
+  modal.style.display = 'block';
+}
+
+// Close modal when X is clicked or when clicking outside modal content
+modal.addEventListener('click', (e) => {
+  if (e.target === modal || e.target.id === 'modalClose') {
+    modal.style.display = 'none';
+  }
+});
+
 // Listen for button click to fetch and display images
 getImagesBtn.addEventListener('click', async () => {
   // Get the selected start and end dates
@@ -52,7 +88,6 @@ getImagesBtn.addEventListener('click', async () => {
 
   // Check if we got data
   if (Array.isArray(apodData) && apodData.length > 0) {
-    // Create a fragment to hold all gallery items
     const fragment = document.createDocumentFragment();
     let imageCount = 0;
     apodData.forEach(item => {
@@ -66,6 +101,8 @@ getImagesBtn.addEventListener('click', async () => {
         const img = document.createElement('img');
         img.src = item.url;
         img.alt = item.title;
+        // Add click event to open modal
+        img.addEventListener('click', () => openModal(item));
 
         // Create the title
         const title = document.createElement('h3');
