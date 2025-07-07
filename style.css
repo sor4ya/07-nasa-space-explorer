@@ -301,11 +301,12 @@ button:active {
   object-fit: cover;
   border-radius: 4px;
   cursor: pointer;
-  transition: opacity 0.2s ease;
+  transition: transform 0.3s ease, opacity 0.2s ease;
 }
 
 .gallery-item img:hover {
-  opacity: 0.9;
+  transform: scale(1.05);
+  opacity: 0.95;
 }
 
 .gallery-item h3 {
@@ -478,10 +479,11 @@ button:active {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.2s ease;
+  transition: transform 0.3s ease, opacity 0.2s ease;
 }
 
 .video-thumbnail-container:hover .video-thumbnail {
+  transform: scale(1.05);
   opacity: 0.8;
 }
 
@@ -591,6 +593,29 @@ button:active {
   line-height: 1.5em;
   color: #105bd8;
   font-weight: 600;
+}
+
+/* Space fact styling */
+.space-fact {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: rgba(16, 91, 216, 0.1);
+  border-radius: 6px;
+  border-left: 4px solid #105bd8;
+}
+
+.space-fact p {
+  font-size: 14px;
+  line-height: 1.4em;
+  color: #5b616b;
+  font-weight: 400;
+  margin: 5px 0;
+}
+
+.space-fact p:first-child {
+  color: #105bd8;
+  font-weight: 600;
+  font-size: 15px;
 }
 
 @keyframes pulse {

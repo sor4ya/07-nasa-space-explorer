@@ -104,17 +104,52 @@ modal.addEventListener('click', (e) => {
   }
 });
 
+// Array of interesting space facts for the loading screen
+const spaceFacts = [
+  "One day on Venus is longer than one year on Venus!",
+  "There are more possible games of chess than there are atoms in the observable universe.",
+  "A neutron star's teaspoon would weigh about 6 billion tons on Earth.",
+  "Space is completely silent because sound needs air to travel.",
+  "The International Space Station travels at 17,500 mph and orbits Earth every 90 minutes.",
+  "Jupiter's Great Red Spot is a storm that has been raging for at least 400 years.",
+  "Saturn would float in water because it's less dense than water.",
+  "The Sun makes up 99.86% of the mass in our solar system.",
+  "Mercury has no atmosphere and experiences temperature swings of 1,100°F.",
+  "Mars has the largest volcano in the solar system - Olympus Mons is 13.6 miles high!",
+  "A year on Neptune lasts 165 Earth years.",
+  "The Moon is moving away from Earth at about 1.5 inches per year.",
+  "There are more trees on Earth than stars in the Milky Way galaxy.",
+  "Astronauts can grow up to 2 inches taller in space due to reduced gravity.",
+  "The footprints on the Moon will last for millions of years due to no wind or water.",
+  "The coldest place in the universe is the Boomerang Nebula at -458°F.",
+  "Black holes can evaporate over time through Hawking radiation.",
+  "The closest star to Earth (besides the Sun) is 4.24 light-years away.",
+  "Galaxies can contain anywhere from 10 million to 100 trillion stars.",
+  "The universe is estimated to be 13.8 billion years old."
+];
+
+// Function to get a random space fact
+function getRandomSpaceFact() {
+  const randomIndex = Math.floor(Math.random() * spaceFacts.length);
+  return spaceFacts[randomIndex];
+}
+
 // Listen for button click to fetch and display images
 getImagesBtn.addEventListener('click', async () => {
   // Get the selected start and end dates
   const startDate = startInput.value;
   const endDate = endInput.value;
 
-  // Show loading message
+  // Show loading message with random space fact
+  const randomFact = getRandomSpaceFact();
   gallery.innerHTML = `
     <div class="loading">
       <div class="loading-icon">🚀</div>
       <p>Loading amazing space images...</p>
+      <div class="space-fact">
+        <p><strong>Did you know?</strong></p>
+        <p>${randomFact}</p>
+      </div>
     </div>
   `;
 
